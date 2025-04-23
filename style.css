@@ -1,0 +1,153 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+  color: #333;
+  } 
+  
+  .main-container {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  background: transparent;
+  }
+  
+  
+  .card-container {
+      width: 550px;
+      height: 780px;
+      perspective: 1000px;
+      margin: auto;
+      position: relative;
+      top: 110px;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+      z-index: 10;
+    }
+  
+  .card-front {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    
+  .card-symbol {
+  font-family: 'Montserrat', sans-serif;
+  }
+  
+  .card-symbol-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30em;
+      opacity: 0.1;
+      pointer-events: none;
+      font-family: 'Montserrat', sans-serif;
+      user-select: none;
+    }
+    
+  
+  .card-corner {
+      position: absolute;
+      font-size: 6em;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .top-left {
+      top: 20px;
+      left: 20px;
+    }
+    
+    .bottom-right {
+      bottom: 20px;
+      right: 20px;
+      transform: rotate(180deg); /* comme sur les vraies cartes */
+    }
+  
+    .card-question {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Montserrat', sans-serif;
+      color: black;
+      font-weight: bold;
+      font-size: 1em; /* remplacé dynamiquement par le JS */
+      width: 96%; /* ← élargir encore plus */
+      max-width: none;
+      max-height: 55%; /* ← pour ne pas toucher les coins */
+      text-align: center;
+      white-space: normal;
+      line-height: 1.35em;
+      word-break: break-word;
+      padding: 0;
+      margin: 0;
+    }
+    
+  .hidden {
+  display: none;
+  }
+  
+  .show {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 2.3s ease, transform 2.5s ease;
+  }
+  
+  .hide {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .card-flip {
+      width: 100%;
+      height: 100%;
+      transition: transform 2.1s ease-in-out;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    
+    .card-container.show .card-flip {
+      transform: rotateY(900deg); /* ✅ deux tours complets */
+    }
+    
+    .card-face {
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .card-front {
+      background: white;
+      border: 2px solid red;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 2;
+      transform: rotateY(180deg);
+    }
+    
+    .card-back {
+      background-image: url('https://previews.123rf.com/images/orcearo/orcearo1212/orcearo121200004/17069555-carte-%C3%A0-jouer-dos-rouge-abstrait-agrandi-motif-floral.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: rotateY(360deg);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    
