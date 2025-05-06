@@ -1,6 +1,36 @@
-window.addEventListener('DOMContentLoaded', () => {
-  showCard();
-});
+//Paramètres connexion Websocket, merci Nutty le Goat
+
+let ws;
+
+function connectToStreamerBotWebSocket() {
+  if ("WebSocket" in window) {
+    ws = new WebSocket("ws://127.0.0.1:8080/");
+
+    ws.onopen = () => {
+      console.log("✅ Connecté à Streamer.bot");
+
+      showCard(); // Affiche la carte dès la connexion
+    };
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      console.log("Message reçu:", data);
+    };
+
+    ws.onclose = () => {
+      console.log("❌ Déconnecté, nouvelle tentative dans 5 secondes...");
+      setTimeout(connectToStreamerBotWebSocket, 5000); // Reconnexion automatique
+    };
+
+    ws.onerror = (error) => {
+      console.error("Erreur WebSocket:", error);
+    };
+  } else {
+    console.error("WebSocket non supporté par le navigateur.");
+  }
+}
+connectToStreamerBotWebSocket();
+
 
 const suits = ['♠', '♥', '♦', '♣'];
 const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -18,7 +48,7 @@ const cardQuestions = {
   'J♠': "Quel est ton meilleur conseil si quelqu'un veut faire un bon snap ou une bonne story insta?",
   'Q♠': "Décris-nous l'endroit qui te donne le plus d'inspiration?",
   'K♠': "Quel a été ta création la plus originale?",
-  
+
   'A♥': "Quel est le buzz ou la trend que tu espères ne plus jamais revoir de ta vie?",
   '2♥': "Si tu avais tout le temps, l'énergie ou l'argent, sur quel projet tu te lancerais?",
   '3♥': "Est-ce que tu connais un défaut physique chez les gens que toi tu trouves attirant?",
@@ -79,6 +109,7 @@ function showCard() {
   const isRed = suit === '♥' || suit === '♦';
   const fullSymbol = `${value}${suit}`;
   const question = cardQuestions[fullSymbol] || "Pas de question associée.";
+  sendQuestionToStreamerBot(question);
   document.getElementById('card-symbol-center').textContent = suit;
   const symbolEl = document.getElementById('card-symbol-center');
   symbolEl.textContent = suit;
@@ -115,3 +146,19 @@ function showCard() {
   }, 10000);
 }
 
+function sendQuestionToStreamerBot(question) {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({
+      request: "DoAction",
+      id: "send-question",
+      action: {
+        name: "Send Question"
+      },
+      args: {
+        question: question
+      }
+    }));
+  } else {
+    console.error("WebSocket non prêt, impossible d’envoyer la question");
+  }
+}
