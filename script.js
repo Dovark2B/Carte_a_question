@@ -135,7 +135,7 @@ function showCard() {
   // Lance l'animation avec rotation multiple
   card.classList.add('show');
 
-  // Disparition après 10s
+  // Disparition après 15s
   setTimeout(() => {
     card.classList.remove('show');
     card.classList.add('hide');
@@ -143,7 +143,7 @@ function showCard() {
       card.classList.add('hidden');
       card.classList.remove('hide');
     }, 1000);
-  }, 10000);
+  }, 15000);
 }
 
 function sendQuestionToStreamerBot(question) {
