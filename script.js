@@ -5,68 +5,68 @@ window.addEventListener('DOMContentLoaded', () => {
 const suits = ['♠', '♥', '♦', '♣'];
 const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 const cardQuestions = {
-  'A♠': "Quel est ton plus grand rêve ?",
-  '2♠': "Si tu pouvais changer une chose dans ta vie, ce serait quoi ?",
-  '3♠': "Quelle est ta chanson préférée ?",
-  '4♠': "Quelle est ta plus grande peur ?",
-  '5♠': "Quel est ton film préféré ?",
-  '6♠': "Plutôt chien ou chat ?",
-  '7♠': "Quel est ton talent caché ?",
-  '8♠': "Quelle est ta plus grande fierté ?",
-  '9♠': "As-tu un porte-bonheur ?",
-  '10♠': "Quel est ton plat préféré ?",
-  'J♠': "Si tu étais un super-héros, ce serait lequel ?",
-  'Q♠': "Si tu gagnais 1 million, tu ferais quoi en premier ?",
-  'K♠': "Quelle est la personne qui t’inspire le plus ?",
+  'A♠': "Qu'est-ce que tu as fait pour prendre soin de toi dernièrement?",
+  '2♠': "Quel a été une de tes dernières bonnes actions et pourquoi?",
+  '3♠': "Qui est ton meilleur ami que tu connais que en ligne et comment vous vous connaissez?",
+  '4♠': "Quel a été ton dernier succès et l'as tu célébré?",
+  '5♠': "Quel est la dernière personne dont tu es reconnaissant(e) et pourquoi?",
+  '6♠': "Quel est ton objet préféré et c'est quoi l'histoire entre vous deux?",
+  '7♠': "Raconte nous la meilleure publication en ligne que tu as vu d'un de tes potes?",
+  '8♠': "En dehors de ton anniversaire, quel est ton jour préféré de l'année et pourquoi?",
+  '9♠': "Qu'est-ce que t'as préféré le plus pendant ton premier job?",
+  '10♠': "Quel jeu vidéo tu achèterais maintenant si on te donnait la thune pour?",
+  'J♠': "Quel est ton meilleur conseil si quelqu'un veut faire un bon snap ou une bonne story insta?",
+  'Q♠': "Décris-nous l'endroit qui te donne le plus d'inspiration?",
+  'K♠': "Quel a été ta création la plus originale?",
+  
+  'A♥': "Quel est le buzz ou la trend que tu espères ne plus jamais revoir de ta vie?",
+  '2♥': "Si tu avais tout le temps, l'énergie ou l'argent, sur quel projet tu te lancerais?",
+  '3♥': "Est-ce que tu connais un défaut physique chez les gens que toi tu trouves attirant?",
+  '4♥': "Qu'est-ce qui te permet d'être la meilleure version de toi-même?",
+  '5♥': "Quelle est l'expression que tu écris le plus quand tu texte quelqu'un?",
+  '6♥': "Quel est le meilleur conseil qu'on t'ait donné pour avancer dans ta vie?",
+  '7♥': "Tu as un jour de vacance. Qu'est-ce que tu en fais?",
+  '8♥': "Quel est le plat que tu cuisinerais si tu voulais impressionner quelqu'un?",
+  '9♥': "Comment tu résumerais ta personnalité en une phrase?",
+  '10♥': "Quel est l'évènement régulier que tu préfères le plus?",
+  'J♥': "Un génie t'offre le voeu d'avoir un objet en illimité. Tu choisis lequel?",
+  'Q♥': "Quelle est la valeur la plus importante à tes yeux?",
+  'K♥': "Quel est la première chose pour laquelle tes amis te connaissent en premier?",
 
-  'A♥': "Quel est ton souvenir d’enfance préféré ?",
-  '2♥': "Si tu pouvais vivre dans un autre pays, lequel ?",
-  '3♥': "Quel est ton plus gros fou rire ?",
-  '4♥': "Qu’est-ce qui te rend heureux à coup sûr ?",
-  '5♥': "Si tu devais écrire un livre, ce serait sur quoi ?",
-  '6♥': "As-tu un rêve que tu n’as jamais osé dire ?",
-  '7♥': "Plutôt introverti ou extraverti ?",
-  '8♥': "Qu’est-ce qui te rend unique ?",
-  '9♥': "Quel est le moment le plus gênant de ta vie ?",
-  '10♥': "Si tu pouvais maîtriser une compétence, ce serait laquelle ?",
-  'J♥': "Quelle est ta citation préférée ?",
-  'Q♥': "Quel est ton plus grand regret ?",
-  'K♥': "Qu’est-ce que l’amour pour toi ?",
+  'A♦': "Comment tu expliquerais la vie que tu as vécu en une phrase?",
+  '2♦': "Raconte-nous la première fois que tu t'es senti intégré dans un groupe?",
+  '3♦': "Qu'est-ce que t'as été capable de faire dont t'es le plus fier?",
+  '4♦': "Quel est la chanson qui te donne le plus d'émotions et pourquoi?",
+  '5♦': "Quelle est la dernière chose intéressante pour toi que tu as appris(e)?",
+  '6♦': "Partage-nous la dernière chose qui t'as rendu heureux?",
+  '7♦': "Quel est ton talent le plus inutile?",
+  '8♦': "Quelle est la chose qui vous fait sourire le plus?",
+  '9♦': "C'est quoi le surnom le plus atypique qu'on vous ai donné et pourquoi?",
+  '10♦': "Quelle est la tradition #1 que tu respectes encore?",
+  'J♦': "Finis la phrase : \"Je me sens le plus en phase quand…\"?",
+  'Q♦': "Quelle est le snack qui te fait automatiquement aller mieux?",
+  'K♦': "Quelle est la chanson qui te donne le plus d'énergie?",
 
-  'A♦': "Quelle est la dernière fois que tu as ri aux larmes ?",
-  '2♦': "Qu’est-ce qui te motive au quotidien ?",
-  '3♦': "Si tu pouvais inviter quelqu’un (vivant ou mort) à dîner ?",
-  '4♦': "Quelle est ta plus grande qualité ?",
-  '5♦': "Quelle est ta destination de rêve ?",
-  '6♦': "Qu’aimes-tu faire quand tu es seul ?",
-  '7♦': "Quel est ton plus beau souvenir ?",
-  '8♦': "Quel métier rêvais-tu de faire enfant ?",
-  '9♦': "Si tu pouvais avoir un super-pouvoir ?",
-  '10♦': "Qu’est-ce qui te fait pleurer facilement ?",
-  'J♦': "Quel est ton plus grand défi à venir ?",
-  'Q♦': "Quelle est ta relation avec ta famille ?",
-  'K♦': "Qu’est-ce que tu changerais dans le monde ?",
-
-  'A♣': "Qu’est-ce qui te rend fier de toi ?",
-  '2♣': "Décris-toi en 3 mots.",
-  '3♣': "Quel est ton plus grand rêve oublié ?",
-  '4♣': "As-tu une phobie étrange ?",
-  '5♣': "Qu’est-ce qui te rend nostalgique ?",
-  '6♣': "As-tu un rituel bizarre ?",
-  '7♣': "Plutôt travail ou plaisir ?",
-  '8♣': "Quelle est la chose la plus folle que tu aies faite ?",
-  '9♣': "As-tu déjà eu le cœur brisé ?",
-  '10♣': "Quel est ton plus gros coup de chance ?",
-  'J♣': "À quoi ressemble ton dimanche parfait ?",
-  'Q♣': "Quelle est la personne que tu admires le plus ?",
-  'K♣': "Qu’aimerais-tu que les gens retiennent de toi ?"
+  'A♣': "Quelle est la dernière chose pour laquelle tu as dépensé du temps et de l'énergie?",
+  '2♣': "Quelle est la chose la plus drôle de toi?",
+  '3♣': "Quelle est la chose la plus importante que tu dois toujours avoir dans ton frigo?",
+  '4♣': "Quel objet de ton enfance tu ne jettera jamais de ta vie?",
+  '5♣': "C'est quoi pour toi quelqu'un qui a réussi dans sa vie?",
+  '6♣': "Quel est le passe-temps que t'as mais que personne ne sait?",
+  '7♣': "Si t'avais un conseil à donner à ton toi plus jeune, ça serait lequel?",
+  '8♣': "Si tu pouvais un expert dans n'importe quel domaine, ça serait lequel?",
+  '9♣': "Quel est le divertissement qui t'amuses le plus?",
+  '10♣': "Quel est la chanson qui te donne le plus d'émotions et pourquoi?",
+  'J♣': "Quel est la chose la plus importante pour toi?",
+  'Q♣': "C'est quoi le commerce local où tu dépenses le plus ta thune?",
+  'K♣': "C'était quoi ton rêve quand tu étais petit ?"
 };
 
 
 function getRandomCard() {
-const suit = suits[Math.floor(Math.random() * suits.length)];
-const value = values[Math.floor(Math.random() * values.length)];
-return { value, suit };
+  const suit = suits[Math.floor(Math.random() * suits.length)];
+  const value = values[Math.floor(Math.random() * values.length)];
+  return { value, suit };
 }
 
 function showCard() {
@@ -81,12 +81,12 @@ function showCard() {
   const question = cardQuestions[fullSymbol] || "Pas de question associée.";
   document.getElementById('card-symbol-center').textContent = suit;
   const symbolEl = document.getElementById('card-symbol-center');
-      symbolEl.textContent = suit;
-      symbolEl.style.color = isRed ? 'red' : 'black';
+  symbolEl.textContent = suit;
+  symbolEl.style.color = isRed ? 'red' : 'black';
 
   document.querySelector('.card-front').style.border = isRed
-      ? '8px solid red'
-      : '8px solid black';
+    ? '8px solid red'
+    : '8px solid black';
 
 
   cornerTop.textContent = fullSymbol;
@@ -114,4 +114,4 @@ function showCard() {
     }, 1000);
   }, 10000);
 }
- 
+
