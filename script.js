@@ -84,7 +84,7 @@ const cardQuestions = {
   '5♣': "C'est quoi pour toi quelqu'un qui a réussi dans sa vie?",
   '6♣': "Quel est le passe-temps que t'as mais que personne ne sait?",
   '7♣': "Si t'avais un conseil à donner à ton toi plus jeune, ça serait lequel?",
-  '8♣': "Si tu pouvais un expert dans n'importe quel domaine, ça serait lequel?",
+  '8♣': "Si tu pouvais être un expert dans n'importe quel domaine, ça serait lequel?",
   '9♣': "Quel est le divertissement qui t'amuses le plus?",
   '10♣': "Quel est la chanson qui te donne le plus d'émotions et pourquoi?",
   'J♣': "Quel est la chose la plus importante pour toi?",

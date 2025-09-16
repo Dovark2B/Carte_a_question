@@ -122,7 +122,7 @@ body {
     }
     
     .card-container.show .card-flip {
-      transform: rotateY(900deg); /* ✅ deux tours complets */
+      transform: rotateY(900deg); /* ✅ deux tours et demi complets */
     }
     
     .card-face {
